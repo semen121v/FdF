@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   create_s_dot.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/07 19:16:48 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/18 22:14:11 by fshade           ###   ########.fr       */
+/*   Created: 2019/03/18 20:09:56 by fshade            #+#    #+#             */
+/*   Updated: 2019/03/18 20:23:44 by fshade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "fdf.h"
 
-int	ft_toupper(int c)
+t_dot			**malloc_s_dot(int x, int y)
 {
-	if (c >= 97 && c <= 122)
+	t_dot		**matr;
+	int			i;
+
+	i = 0;
+	if ((matr = (t_dot**)malloc(sizeof(t_dot *) * (y + 1))) == NULL)
+		return (NULL);
+	while (i < x)
 	{
-		printf("AAA%d\n", c - 32);
-		return (c - 32);
+		if ((matr[i] = (t_dot*)malloc(sizeof(t_dot) * (y + 1))) == NULL)
+			return (NULL);
+		i++;
 	}
-	else
-		return (c);
+	matr[i] = NULL;
+	return (matr);
 }

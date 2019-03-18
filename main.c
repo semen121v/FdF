@@ -6,7 +6,7 @@
 /*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 17:45:44 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/16 20:29:51 by fshade           ###   ########.fr       */
+/*   Updated: 2019/03/18 22:07:04 by fshade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int main(int ac, char **av)
 	//t_param     *param;
 	t_gnl		*line;
 	t_gnl		*first;
+	t_dot		**matr;
 	int			x;
 	int			y;
 	int			fd;
@@ -63,11 +64,11 @@ int main(int ac, char **av)
     if ((fd = open(av[1], O_RDONLY)) == -1)
        return (0);
 	else
-	{	
+	{
 		if ((line = (t_gnl*)malloc(sizeof(t_gnl))) == NULL)
-				return (0);
+			return (0);
 		first = line;
-		while((x  = get_next_line( fd , &line->line)) > 0)
+		while ((x = get_next_line(fd, &line->line)) > 0)
 		{
 			if ((line->next = (t_gnl*)malloc(sizeof(t_gnl))) == NULL)
 				return (0);
@@ -79,12 +80,11 @@ int main(int ac, char **av)
 		x = check_x(first);
 		y = check_y(first);
 	}
-	while (line->next != NULL)
-	{
-		printf ("%s\n", line->line);
-		line = line->next;
-	}
+	matr = malloc_s_dot(x, y);
 	printf("%d%d\n", x, y);
+	x = ft_atoi_base(" 0xfffff");
+	printf ("%c\n", ft_toupper('c'));
+
 
 	// param = (t_param*)malloc(sizeof(t_param));
 	// param->mlx_ptr = mlx_init();

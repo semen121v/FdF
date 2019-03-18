@@ -6,7 +6,7 @@
 /*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 20:28:52 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/16 21:21:50 by fshade           ###   ########.fr       */
+/*   Updated: 2019/03/18 20:50:59 by fshade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@
 // 	void			*win_ptr;
 // }					t_param;
 
-// typedef struct		s_dot
-// {
-// 	int				z;
-// 	char			*color;
-// }					t_dot;
+typedef struct		s_dot
+{
+	int				z;
+	char			*color;
+}					t_dot;
 
 typedef struct		s_gnl
 {
@@ -41,5 +41,7 @@ typedef struct		s_gnl
 int get_next_line(const int fd, char **line);
 int     check_y(t_gnl *fd);
 int     check_x(t_gnl *fd);
+t_dot			**malloc_s_dot(int x, int y);
+int			ft_atoi_base(char *nb);
 
 #endif
