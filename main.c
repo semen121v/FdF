@@ -6,7 +6,7 @@
 /*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 17:45:44 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/18 22:07:04 by fshade           ###   ########.fr       */
+/*   Updated: 2019/03/20 18:00:58 by fshade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,16 @@ int main(int ac, char **av)
 	//t_param     *param;
 	t_gnl		*line;
 	t_gnl		*first;
-	t_dot		**matr;
+	t_dot		***matr;
+	char *str = "0xffffff";
 	int			x;
 	int			y;
 	int			fd;
+	int	i;
+	int j;
 
 	x = 0;
+	i = 0;
 	if (ac == 1)
         return (0);
     if ((fd = open(av[1], O_RDONLY)) == -1)
@@ -81,9 +85,19 @@ int main(int ac, char **av)
 		y = check_y(first);
 	}
 	matr = malloc_s_dot(x, y);
-	printf("%d%d\n", x, y);
-	x = ft_atoi_base(" 0xfffff");
-	printf ("%c\n", ft_toupper('c'));
+	matr = fulfill_matr(matr, first, x, y);
+	while (i != y)
+	{
+		j = 0;
+		while(j != x)
+		{
+			printf("%d,%X  ", matr[i][j]->z, matr[i][j]->color);
+			j++;
+		}
+		printf("\n");
+		j = 0;
+		i++;
+	}
 
 
 	// param = (t_param*)malloc(sizeof(t_param));

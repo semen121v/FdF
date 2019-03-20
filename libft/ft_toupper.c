@@ -6,20 +6,16 @@
 /*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 19:16:48 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/18 22:14:11 by fshade           ###   ########.fr       */
+/*   Updated: 2019/03/20 15:37:24 by fshade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-	{
-		printf("AAA%d\n", c - 32);
 		return (c - 32);
-	}
 	else
 		return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 17:21:06 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/18 19:23:32 by fshade           ###   ########.fr       */
+/*   Updated: 2019/03/20 15:42:01 by fshade           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ const int		count_x(t_gnl *str)
 	str->split = str1;
 	while (*str1 != '\0')
 	{
+		//printf("%s\n",*str1);
 		str1++;
 		i++;
 	}
@@ -42,7 +43,6 @@ int     check_x(t_gnl *fd)
 	{
 		if ((j = count_x(fd)) == 0)
 			return (0);
-		printf("i=%d j=%d\n", i,j);
 		if (i != j)
 		{
 			printf("not correct file\n");
