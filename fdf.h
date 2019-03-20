@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fshade <fshade@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eschoen <eschoen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 20:28:52 by fshade            #+#    #+#             */
-/*   Updated: 2019/03/20 17:22:58 by fshade           ###   ########.fr       */
+/*   Updated: 2019/03/20 20:08:12 by eschoen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 # include "./libft/includes/libft.h"
 # define BUFF_SIZE 128
 # define MAX  5
-
-// typedef struct		s_param
-// {
-// 	void			*mlx_ptr;
-// 	void			*win_ptr;
-// }					t_param;
 
 typedef struct		s_dot
 {
@@ -37,6 +31,15 @@ typedef struct		s_gnl
 	char			*line;
 	struct s_gnl	*next;
 }					t_gnl;
+
+typedef struct		s_param
+{
+	int				x;
+	int				y;
+	struct s_dot	***matr;
+	void			*mlx_ptr;
+	void			*win_ptr;
+}					t_param;
 
 int 	get_next_line(const int fd, char **line);
 int     check_y(t_gnl *fd);
